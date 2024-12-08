@@ -1,5 +1,5 @@
 services:
-  parse:
+  raker:
     image: raker:0.1.0
     build:
       context: .
