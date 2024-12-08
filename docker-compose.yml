@@ -1,0 +1,8 @@
+services:
+  parse:
+    image: raker:0.1.0
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
