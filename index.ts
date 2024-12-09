@@ -8,8 +8,8 @@ const port = 3000;
 app.ws('/commit', function(ws, req) {
   ws.on('message', function(msg, isBinary) {
     ws.send(msg);
-    expressWs.clients.forEach(function each(client) {
-      if (client.readyState === WebSocket.OPEN) {
+    expressWs.getWss().clients.forEach(function each(client) {
+      if (client.readyState === 1) {
         client.send(msg, { binary: isBinary });
       }
     });
